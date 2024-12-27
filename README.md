@@ -19,4 +19,7 @@ Fonts - Google fonts
 Jpg Image - Found randomly
 <br>
 
+Fav Icon - Gemini Website
+<br>
+
 HTML, CSS files - Developed by myself
