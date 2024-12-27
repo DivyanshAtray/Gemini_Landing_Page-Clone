@@ -6,12 +6,17 @@ This project is a clones Gemini landing page as of 2024, while working on this p
 <br>
 Working on this project was really helpful in improving my understanding of modern web development techniques and best practices.
 <br>
+
 Source of files used in this project:-
 <br>
+
 SVG files - Material Symbols & Icons by Goolge
 <br>
+
 Fonts - Google fonts
 <br>
+
 Jpg Image - Found randomly
 <br>
+
 HTML, CSS files - Developed by myself
