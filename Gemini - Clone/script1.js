@@ -25,10 +25,10 @@ document.addEventListener("DOMContentLoaded", function () {
             chat.style.marginTop = '10rem';
         } else if (window.innerHeight < 880) {
             chat.style.height = '50vh';
-            chat.style.marginTop = '12rem'; // Ensure marginTop is applied
+            chat.style.marginTop = '12rem'; 
         } //else {
         //     chat.style.height = '53vh';
-        //     chat.style.marginTop = ''; // Reset marginTop for larger heights
+        //     chat.style.marginTop = ''; 
         // }
     }
 
@@ -55,62 +55,60 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
         if (event.key === 'Enter' && inputBar.value.trim() !== "") {
-            event.preventDefault(); // Prevent default form submission behavior
+            event.preventDefault(); 
 
 
-            // Hide the all_boxes div
             allBoxes.style.display = 'none';
 
-            // Apply the specified CSS properties to the chat div
+            
             chat.style.display = 'flex';
             chat.style.flexDirection = 'column';
             chat.style.width = '90%';
             chat.style.height = '51vh';
-            chat.style.marginTop = '10rem'; // Set the initial marginTop
-            chat.style.alignItems = 'flex-end'; // Align messages to the right
+            chat.style.marginTop = '10rem'; 
+            chat.style.alignItems = 'flex-end'; 
             chat.style.gap = '10px';
-            chat.style.justifyContent = 'flex-start'; // Align messages to the top
-            chat.style.paddingRight = '10px'; // Add padding to move messages more to the right
-            chat.style.paddingTop = '2rem'; // Add top padding to prevent messages from going too far up
+            chat.style.justifyContent = 'flex-start'; 
+            chat.style.paddingRight = '10px'; 
+            chat.style.paddingTop = '2rem'; 
 
             if (window.innerWidth < 550) {
                 chat.style.marginTop = '12rem';
-                chat.style.overflowY = 'scroll'; // Enable vertical scrolling
+                chat.style.overflowY = 'scroll'; 
                 lasttext.style.bottom = '5px';
                 text.style.height = '20dvh';
             } else {
                 chat.style.marginTop = '15rem';
-                chat.style.overflowY = 'unset'; // Disable scrolling for larger screens
+                chat.style.overflowY = 'unset'; 
             }
 
             
 
-            // Adjust the chat div height based on the viewport height
+            
             adjustChatHeight();
 
-            // Create a new message div
+            
             const message = document.createElement('div');
-            message.style.backgroundColor = '#252425'; // Adjust color as needed
+            message.style.backgroundColor = '#252425'; 
             message.style.color = '#e3e3e3';
             message.style.borderRadius = '10px';
             message.style.padding = '10px';
-            message.style.maxWidth = '60%'; // Adjust the maximum width as needed
-            message.style.minWidth = '50px'; // Set a minimum width to prevent early wrapping
+            message.style.maxWidth = '60%'; 
+            message.style.minWidth = '50px'; 
             message.style.wordWrap = 'break-word';
-            message.style.marginRight = '10px'; // Move the message a bit more to the right
+            message.style.marginRight = '10px';
             message.style.transition = 'all 0.5s ease-in-out';
             message.style.opacity = '0';
             message.textContent = inputBar.value;
             message.style.flexShrink = '0';
 
-            // Append the message to the chat div
             chat.appendChild(message);
 
             setTimeout(() => {
                 message.style.opacity = '1';
             }, 10);
 
-            // Clear the input bar
+           
             inputBar.value = '';
 
             chat.scrollTop = chat.scrollHeight;
