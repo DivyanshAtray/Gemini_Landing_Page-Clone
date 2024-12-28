@@ -3,6 +3,39 @@
     padding: 0;
     font-family: poppins;
     overflow: hidden;
+    ::-webkit-scrollbar {
+        width: 10px;
+        }
+        
+        /* Track */
+        ::-webkit-scrollbar-track {
+        background: #f1f1f12a;
+        }
+        
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+        background: #888;
+        }
+
+}
+
+/* for messages */
+
+.message {
+    color: #e3e3e3;
+    font-family: Poppins;
+    background-color: #252425; /* Adjust color as needed */
+    border-radius: 10px;
+    padding: 10px;
+    max-width: 60%; /* Adjust the maximum width as needed */
+    min-width: 50px; /* Set a minimum width to prevent early wrapping */
+    word-wrap: break-word;
+    margin-right: 0; /* Align the message to the right edge */
+}
+
+.chat{
+    display: none;
+
 }
 
 
@@ -135,6 +168,13 @@ body{
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out; 
+    opacity: 1; 
+    visibility: visible;
+}
+.hidden{
+    opacity: 0; 
+    visibility: hidden;
 }
 
 .hello{
@@ -193,7 +233,8 @@ body{
 
 .inputbar{
 
-    position:absolute;
+    position: absolute;
+    /* display: flex; */
     width: 42vw;
     height: 6vh;
     border: none;
@@ -201,21 +242,37 @@ body{
     color: #b8bec6;
     background-color: #1e1f20;
     font-size: 16px;
+
+    /* for indentatio */
+    padding-left: 20px;
+    padding-right: 5rem;
+    padding-top: 15px;
+    box-sizing: border-box;
+    outline: 0;
+    resize:none;
+    align-items: center;
+    line-height: 1.5;
+    vertical-align: middle;
+    
 }
 
-.inputbar::placeholder {
-
-    color: #b8bec6;
-    padding-left: 20px;
-  }
+.inputbar::placeholder { color: #aaa; 
+     align-self: center; 
+     line-height: normal; 
+     vertical-align: middle;
+     display: flex;
+     align-items: center;
+    }
 
   .inputcontainer {
+    height: 6vh;
     width: 42vw;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content:flex-end;
-    z-index: 1;
+    /* z-index: 1; */
+    /* position: relative; */
 }
 
 .inimg{
@@ -472,6 +529,14 @@ body{
 @media (width <= 392px){
     .text{
         height: 20vh;
+        width: 90%;
+    }
+
+    .hello{
+        font-size: 1.5rem;
+    }
+    .sub{
+        font-size: 1rem;
     }
 
     .topleft{
@@ -527,6 +592,20 @@ body{
     }
 }
 
+@media (width <= 332){
+
+    .text{
+        height: 30dvh;
+        
+    }
+    .hello{
+        font-size: 1rem;
+    }
+    .sub{
+        font-size: 0.5rem;
+    }
+}
+
 
 @media (max-height: 860px){
 
@@ -540,7 +619,7 @@ body{
 
     .text{
         position: absolute;
-        height: 30dvh;
+        height: 20dvh;
 
     }
 
@@ -618,18 +697,18 @@ body{
 
     .text{
         position: absolute;
-        height: 30dvh;
+        height: 25dvh;
         margin: 0rem;
         padding: 0rem;
         justify-content: start;
     }
 
     .hello{
-        font-size: 2.75rem;
+        font-size: 2.5rem;
         padding-bottom: 1rem;
     }
     .sub{
-        font-size: 2rem;
+        font-size: 1.5rem;
     }
 
     .all_boxes{
@@ -675,6 +754,7 @@ body{
         height: 25dvh;
         margin: 0rem;
         padding: 0;
+        
     }
 
     .hello{
