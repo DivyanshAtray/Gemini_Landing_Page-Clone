@@ -1,0 +1,818 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: poppins;
+    overflow: hidden;
+    ::-webkit-scrollbar {
+        width: 10px;
+        }
+        
+        /* Track */
+        ::-webkit-scrollbar-track {
+        background: #f1f1f12a;
+        }
+        
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+        background: #888;
+        }
+
+}
+
+/* for messages */
+
+.message {
+    color: #e3e3e3;
+    font-family: Poppins;
+    background-color: #252425; /* Adjust color as needed */
+    border-radius: 10px;
+    padding: 10px;
+    max-width: 60%; /* Adjust the maximum width as needed */
+    min-width: 50px; /* Set a minimum width to prevent early wrapping */
+    word-wrap: break-word;
+    margin-right: 0; /* Align the message to the right edge */
+}
+
+.chat{
+    display: none;
+
+}
+
+
+body{
+    background-color: #0f1011;
+    overflow: hidden;
+    width: 100vw;
+}
+
+.parent{
+    display: flex;
+}
+.sidebar{
+    
+    width: 3.5vw;
+    height: 100vh;
+    background-color: #1e1f20;
+    
+}
+.main{
+    width: 96.5vw;
+    height: 100vh;
+    overflow-x: hidden;
+    
+}
+.top{
+    height: 5vh;
+    overflow: hidden;
+    display: flex;
+}
+
+.g{
+    font-family: poppins;
+    font-size: 19px;
+    color: #caccce;
+    font-weight: 400;
+}
+
+.material-symbols-outlined{
+    color: white;
+}
+
+.topleft{
+    height: 5vh;
+    width: 15vw;
+    display: flex;
+    align-items:end;
+    margin-left: 25px;
+}
+
+.topright{
+    height: 5vh;
+    width: 85vw;
+    display: flex;
+    align-items: end;
+    flex-direction: row-reverse;
+}
+
+.gemlogo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: poppins;
+    font-size: 11px;
+    font-weight: 600;
+    width: 175px;
+    height: 36px;
+    border-radius: 10px;
+    background-color: #37393b;
+    color: white;
+    margin-right: 25px;
+}
+
+.svg{
+    scale: 0.8;
+    margin-right: 4px;
+}
+
+.apps{
+    scale: 1;
+    margin-right: 25px;
+    margin-bottom: 3px;
+}
+
+.profile{
+    height: 33px;
+    width: auto;
+    border-radius: 100%;
+    margin-right: 18px;
+}
+
+.maincontent{
+    display: flex;
+    overflow: hidden;
+    width: 96vw;
+}
+
+.center{
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 96vw;
+    height: 100vh;
+}
+@keyframes changeBackgroundPosition {
+    from {
+        background-position: right;
+    }
+    to {
+        background-position: left;
+    }
+}
+
+@keyframes reveal {
+    0% {
+        opacity: 0;
+        transform: translateX(-40px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.text{
+    z-index: 3;
+    position:absolute;
+    width: 48%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out; 
+    opacity: 1; 
+    visibility: visible;
+}
+.hidden{
+    opacity: 0; 
+    visibility: hidden;
+}
+
+.hello{
+    display: flex;
+    font-family: poppins;
+    font-size: 3.5rem;
+    font-weight: 600;
+    margin-top: 2.5rem;
+    background: -webkit-linear-gradient(16deg, #4285f4, #9b72cb, #d96570, #9b72cb, #4285f4, #4285f4, #9b72cb, #d96570, #4285f4, #9b72cb);
+    background-size: 250%;
+    opacity: 0;
+    animation: changeBackgroundPosition 1s ease-in forwards 0.2s, reveal 0.5s ease-out forwards;;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent
+}
+
+.sub{
+    display: flex;
+    font-family: poppins;
+    font-size: 3.2rem;
+    font-weight: 600;
+    margin-top: -1rem;
+    color: #444746;
+}
+
+.all_boxes{
+    margin-top: 5rem;
+    display: flex;
+    height: 70vh;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+}
+
+.box {
+    font-size: 15px;
+    width: 163px;
+    height: 163px;
+    background-color: #1e1f20;
+    color: #fff;
+    border-radius: 10px; /* Rounded corners */
+    padding: 17px; /* Space inside the box */
+    position: relative; /* To position icon absolutely within */
+    flex-wrap: wrap;
+  }
+  
+  .icon {
+    border-radius: 100%;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+  }
+  
+
+.inputbar{
+
+    position: absolute;
+    /* display: flex; */
+    width: 42vw;
+    height: 6vh;
+    border: none;
+    border-radius: 50px;
+    color: #b8bec6;
+    background-color: #1e1f20;
+    font-size: 16px;
+
+    /* for indentatio */
+    padding-left: 20px;
+    padding-right: 5rem;
+    padding-top: 15px;
+    box-sizing: border-box;
+    outline: 0;
+    resize:none;
+    align-items: center;
+    line-height: 1.5;
+    vertical-align: middle;
+    
+}
+
+.inputbar::placeholder { color: #aaa; 
+     align-self: center; 
+     line-height: normal; 
+     vertical-align: middle;
+     display: flex;
+     align-items: center;
+    }
+
+  .inputcontainer {
+    height: 6vh;
+    width: 42vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content:flex-end;
+    /* z-index: 1; */
+    /* position: relative; */
+}
+
+.inimg{
+    width: 5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-right: 12px;
+    align-items:center;
+
+    z-index: 3;
+}
+
+.lasttext{
+    width: 100%;
+    font-size: 11.5px;
+    font-weight: 100;
+    bottom: 70px;
+    border: none;
+    color: #e3e3e3;
+    
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+}
+
+.bold{
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+.right{
+    height: 100vh;
+    width: 27%;
+}
+
+
+@media (width <= 870px) {
+    
+    *{
+        overflow-x: auto;
+    }
+
+    body{
+        overflow-x: auto;
+        overflow-y: hidden;
+        width: 100vw;
+    }
+    
+    .all_boxes{
+        width:110vw;
+        overflow-x: scroll;
+        height: 90vh;
+        display: flex;
+        margin-left: 10rem;
+        position: relative;
+        align-items: center;
+        z-index: 1;
+    }
+
+    .inputbar{
+        width: 55vw;
+    }
+
+    .inputcontainer{
+        height: 42vh;
+        width: 60vw;
+    }
+
+    .inimg{
+        width: 4.5rem;
+        position: absolute; 
+    }
+
+    .lasttext{
+        bottom: 30px;
+    }
+
+    .text{
+        width: 80%;
+    }
+
+    .sidebar{
+        display: none;
+    }
+}
+
+@media (width <= 840px){
+
+
+    .hello{
+        font-size: 3.5rem;
+    }
+    .sub{
+        font-size: 3rem;
+    }
+}
+
+@media (width <= 745px){
+
+    .lasttext{
+    font-size: 10px;
+    }
+
+    .all_boxes{
+        width: 140vw;
+        margin-left: 15rem;
+    }
+
+    .g{
+        font-size: 17px;
+    }
+}
+
+@media (width <= 650px){
+
+    .inputcontainer{
+        height: 52vh;
+    }
+
+    .lasttext{
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .hello{
+        font-size: 3rem;
+    }
+    .sub{
+        font-size: 2.5rem;
+    }
+}
+
+@media (width <= 610px){
+
+    .topleft{
+        width: 17vw;
+    }
+
+    .all_boxes{
+        width: 155vw;
+        margin-left: 20rem;
+    }
+
+}
+
+@media (width <= 552px){
+
+    .inputbar{
+        width: 80vw;
+    }
+
+    .inputcontainer{
+        width: 80vw;
+    }
+
+    .lasttext{
+        width: 60vw;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        justify-content: space-evenly;
+        text-wrap: wrap;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+        height: 5vh;
+    }
+
+    .topleft{
+        width: 20vw;
+        margin-left: 10px;
+    }
+
+    .topright{
+        width: 80vw;
+    }
+
+    .gemlogo{
+        width: 160px;
+        height: 30px;
+        margin-right: 15px;
+    }
+
+    .apps{
+        margin-right: 15px;
+    }
+
+    .text{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        height: 16vh;
+    }
+    .hello{
+        font-size: 2rem;
+    }
+    .sub{
+        font-size: 1.5rem;
+    }
+}
+
+@media (width <= 485px){
+    .all_boxes{
+        margin-left: 25rem;
+        width: 190vw;
+    }
+}
+
+@media (width <= 448px){
+
+    .topleft{
+        width: 23vw;
+        margin-left: 10px;
+    }
+
+    .topright{
+        width: 77vw;
+    }
+
+    .gemlogo{
+        width: 160px;
+        height: 30px;
+        margin-right: 10px;
+    }
+
+    .apps{
+        margin-right: 10px;
+    }
+
+}
+
+@media (width <= 418px){
+
+    .all_boxes{
+        margin-left: 30rem;
+        width: 230vw;
+    }
+
+    .inputbar{
+        width: 85vw;
+    }
+
+    .inputcontainer{
+        width: 85vw;
+        height: -10vh;
+    }
+
+    .lasttext{
+        bottom: 10px;
+    }
+}
+
+@media (width <= 392px){
+    .text{
+        height: 20vh;
+        width: 90%;
+    }
+
+    .hello{
+        font-size: 1.5rem;
+    }
+    .sub{
+        font-size: 1rem;
+    }
+
+    .topleft{
+        width: 30vw;
+        margin-left: 10px;
+    }
+
+    .topright{
+        width: 70vw;
+        margin-right: 2px;
+    }
+
+    .gemlogo{
+        width: 160px;
+        height: 30px;
+        margin-right: 10px;
+    }
+
+    .apps{
+        margin-right: 10x;
+    }
+
+    .lasttext{
+        width: 90vw;
+        height: 7vh;
+    }
+}
+
+@media (width <= 360px){
+
+    .gemlogo{
+        display: none;
+    }
+
+    .apps{
+        margin-right: 20px;
+    }
+
+    .all_boxes{
+        width: 270vw;
+    }
+
+    .inputbar{
+        width: 92vw;
+    }
+
+    .inputcontainer{
+        width: 95vw;
+    }
+
+    .inputbar::placeholder{
+        font-size: 13px;
+    }
+}
+
+@media (width <= 332){
+
+    .text{
+        height: 30dvh;
+        
+    }
+    .hello{
+        font-size: 1rem;
+    }
+    .sub{
+        font-size: 0.5rem;
+    }
+}
+
+
+@media (max-height: 860px){
+
+    .top{
+        height: 5dvh;
+    }
+
+    .maincontent{
+        height: 95dvh;
+    }
+
+    .text{
+        position: absolute;
+        height: 30dvh;
+
+    }
+
+    .all_boxes{
+        margin-top: 7rem;
+        height: 60dvh;
+    }
+
+    .inputcontainer{
+        height: 20dvh;
+    }
+
+    .lasttext{
+        bottom: 20px;
+    }
+
+}
+
+@media (max-height: 800px){
+
+    .top{
+        height: 5dvh;
+        display: flex;
+        align-items: center;
+    }
+
+    .maincontent{
+        height: 95dvh;
+    }
+
+    .center{
+        height: 95dvh;
+    }
+
+
+    .text{
+        position: absolute;
+        height: 30dvh;
+        margin: 0rem;
+        padding: 0;
+    }
+
+    .all_boxes{
+        margin-top: 10rem;
+        height: 50dvh;
+        margin-bottom: 0;
+    }
+
+    .inputcontainer{
+        height: 15dvh;
+        margin-bottom: 0;
+        width: 80vw;
+        display: flex;
+        flex-direction: row;
+
+    }
+    .inputbar{
+        height: 7.5dvh;
+        width: 80vw
+    }
+
+}
+
+@media (max-height: 760px){
+
+    .top{
+        height: 6dvh;
+        display: flex;
+        align-items: center;
+    }
+
+    .maincontent{
+        height: 94dvh;
+    }
+
+    .text{
+        position: absolute;
+        height: 25dvh;
+        margin: 0rem;
+        padding: 0rem;
+        justify-content: start;
+    }
+
+    .hello{
+        font-size: 2.5rem;
+        padding-bottom: 1rem;
+    }
+    .sub{
+        font-size: 1.5rem;
+    }
+
+    .all_boxes{
+        margin-top: 0rem;
+        height: 50dvh;
+        padding-top: 9rem;
+    }
+
+    .inputcontainer{
+        height: 15dvh;
+        display: flex;
+        align-items:center;
+        margin-top: 0;
+    }
+
+    .inputbar{
+        height: 8dvh;
+        display: flex;
+        align-items: center;
+    }
+
+    .lasttext{
+        height: 6.5dvh;
+        bottom: 15px;
+    }
+
+}
+
+@media (max-height: 670px){
+
+    .top{
+        height: 8dvh;
+        display: flex;
+        align-items: center;
+    }
+
+    .maincontent{
+        height: 92dvh;
+    }
+
+    .text{
+        position: absolute;
+        height: 25dvh;
+        margin: 0rem;
+        padding: 0;
+        
+    }
+
+    .hello{
+        font-size: 2.25rem;
+    }
+    .sub{
+        font-size: 1.5rem;
+    }
+
+    .all_boxes{
+        padding-top: 1rem;
+        margin-top: 5rem;
+        height: 50dvh;
+    }
+
+    .inputbar{
+        height: 9dvh;
+        width: 80vw;
+    }
+
+    .inputcontainer{
+        height:16dvh ;
+        width: 80vw;
+        bottom: 3.5rem;
+    }
+
+    .lasttext{
+        height: 8dvh;
+    }
+
+}
+/* Add this to your CSS file */
+.overlay {
+    opacity: 0;
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.form-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.exit-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+}
