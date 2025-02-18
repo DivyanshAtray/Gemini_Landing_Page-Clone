@@ -18,7 +18,11 @@ async function sendData(chat,message,userInput) {
         console.error('Error:', error);
         message.textContent = "Error communicating with the server";
         chat.appendChild(message);
+
+        // chat.scrollTop = chat.scrollHeight;
     }
+
+    chat.scrollTop = chat.scrollHeight;
 }
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -115,11 +119,11 @@ document.addEventListener("DOMContentLoaded", function () {
             message.style.color = '#e3e3e3';
             message.style.borderRadius = '10px';
             message.style.padding = '10px';
-            message.style.maxWidth = '60%'; 
+            message.style.maxWidth = '50%'; 
             message.style.minWidth = '50px'; 
             message.style.wordWrap = 'break-word';
             message.style.marginRight = '10px';
-            message.style.transition = 'all 0.5s ease-in-out';
+            message.style.transition = 'all 1s ease-out';
             message.style.opacity = '0';
             message.textContent = inputBar.value;
             message.style.flexShrink = '0';
@@ -133,7 +137,7 @@ document.addEventListener("DOMContentLoaded", function () {
             message2.style.minWidth = '50px'; 
             message2.style.wordWrap = 'break-word';
             message2.style.marginRight = '10px';
-            message2.style.transition = 'all 0.5s ease-in-out';
+            message2.style.transition = 'all 1s ease-out';
             message2.style.opacity = '0';
             message2.textContent = inputBar.value;
             message2.style.flexShrink = '0';

@@ -1,40 +1,52 @@
+
 from flask import render_template, request, jsonify
-import openai
-import os
-from dotenv import load_dotenv
+import google.generativeai as genai
 
-# Load environment variables
-load_dotenv()
 
-# Set OpenAI API key
-openai.api_key = "your key here"
+import webbrowser
 
-def chat_ai(prompt):
+
+genai.configure(api_key="")
+
+def chat_ai(user_input):
     try:
-        # Make the call to the API with the correct method
-        response = openai.ChatCompletion.create(
-            model="gpt-3.5-turbo",
-            messages=[
-                {"role": "user", "content": prompt}
-            ]
-        )
-        # Get the AI response
-        return response['choices'][0]['message']['content'].strip()
+        
+        model = genai.GenerativeModel("gemini-1.5-flash")
+        
+        response = model.generate_content(user_input)
+        return response.text  
     except Exception as e:
+        
         return f"Error: {str(e)}"
 
 def init_views(app):
     @app.route('/')
     def home():
-        return render_template('index.html')
+        return render_template('index.html')  
 
     @app.route('/process', methods=['POST'])
     def process():
-        user_input = request.json.get('input', '')
-        if not user_input:
-            return jsonify({"response": "Error: No input provided"}), 400
+        try:
+            
+            input = request.json.get('input')
+            user_input = input.lower()
+            if not user_input:
+                return jsonify({"response": "Error: No input provided"}), 400
+            
+            
+            
+            if "aaradhya" in user_input:
+                return jsonify({"response" : "pagal bhag ja yahan se"})
+            elif "golu" in user_input:
+                return jsonify({"response" : "hello"})
+            elif "your name" in user_input:
+                return jsonify({"response" : "Gemini by Divyansh and yours?"})
 
-        ai_response = chat_ai(user_input)
-        return jsonify({"response": ai_response})
 
 
+            
+            ai_response = chat_ai(user_input)
+            return jsonify({"response": ai_response})
+        except Exception as e:
+            
+            return jsonify({"response": f"Error: {str(e)}"}), 500

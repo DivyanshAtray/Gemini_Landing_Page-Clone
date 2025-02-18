@@ -1,12 +1,16 @@
 from flask import Flask
 from routes import init_views
 
-# Initialize the Flask app
-app = Flask(__name__, static_url_path='/', static_folder='static')
 
-# Initialize routes
+app = Flask(
+    __name__,
+    static_url_path='/',
+    static_folder='static'  
+)
+
+
 init_views(app)
 
 if __name__ == '__main__':
-    # Run the Flask app
-    app.run(debug=True)
+    
+    app.run(host='0.0.0.0', port=5000, debug=True)
